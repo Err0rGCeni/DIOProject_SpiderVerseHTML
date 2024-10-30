@@ -1,0 +1,42 @@
+/* Firefox (uncomment to work in Firefox, although other properties will not work!)  */
+/** {
+  scrollbar-width: thin;
+  scrollbar-color: #D92B2B #11140D;
+}*/
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 8px;
+  background-color: #11140D11;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: #11140D77;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: #2A5E8CAA;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: #D92B2B77;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #F23535AA;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #F23535FF;
+}
+
+/* Efeito de foco para Firefox */
+*::-moz-scrollbar-thumb:hover {
+  background-color: #F23535AA;
+}

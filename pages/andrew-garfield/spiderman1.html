@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Spider Man | Multiverso</title>
   <link href="../../assets/css/internal.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
 </head>
 
 <body>
@@ -15,12 +16,11 @@
       <source src="../../assets/videos/amazing-spiderman-2014-trailer.mp4" type="video/mp4" />
     </video>
 
-    <!--  Coluna da esquerda com menu (Left Column with menu)  -->
     <div class="s-left-column">
       <nav class="navigator">
         <div class="navigator__icon">
-          <a href="../../index.html">
-            <img src="../../assets/images/icons/spiderman1-andrew.png" />
+          <a href="../../index.html" title="Voltar">
+            <img src="../../assets/images/icons/spiderman1-andrew.png" alt="Símbolo Aranha" />
           </a>
         </div>
         <ul>
@@ -29,7 +29,6 @@
         </ul>
       </nav>
     </div>
-    <!-- FIM - Coluna da esquerda com menu (Left Column with menu)  -->
 
     <div class="s-main-content">
       <div class="s-main-content__top">
@@ -58,7 +57,7 @@
         <div class="s-links">
           <ul>
             <li>
-              <a href="https://www.youtube.com/watch?v=TYMMOjBUPMM" class="link-button" target="_blank">
+              <a rel="noopener" href="https://www.youtube.com/watch?v=TYMMOjBUPMM" class="link-button" target="_blank">
                 <span class="icon">
                   <div class="play-icon">&nbsp;</div>
                 </span>
@@ -74,13 +73,63 @@
       <div class="s-main-content__bottom">
         <div class="gallery">
           <ul>
-            <li><a href="#"><img src="../../assets/images/spiderman-andrew/movie-01/gallery/image-01.png" alt=""></a></li>
-            <li><a href="#"><img src="../../assets/images/spiderman-andrew/movie-01/gallery/image-02.png" alt=""></a></li>
-            <li><a href="#"><img src="../../assets/images/spiderman-andrew/movie-01/gallery/image-03.png" alt=""></a></li>
+            <li>
+              <a data-fancybox href="../../assets/images/spiderman-andrew/movie-01/gallery/image-01.png"
+                title="Imagem 1">
+                <img src="../../assets/images/spiderman-andrew/movie-01/gallery/image-01.png" alt="">
+              </a>
+            </li>
+            <li>
+              <a data-fancybox href="../../assets/images/spiderman-andrew/movie-01/gallery/image-02.png"
+                title="Imagem 2">
+                <img src="../../assets/images/spiderman-andrew/movie-01/gallery/image-02.png" alt="">
+              </a>
+            </li>
+            <li>
+              <a data-fancybox href="../../assets/images/spiderman-andrew/movie-01/gallery/image-03.png"
+                title="Imagem 3">
+                <img src="../../assets/images/spiderman-andrew/movie-01/gallery/image-03.png" alt="">
+              </a>
+            </li>
           </ul>
         </div>
       </div>
     </div>
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+  <script>
+    // Função para detectar o navegador e carregar o CSS específico
+    function loadScrollStyle() {
+      const userAgent = navigator.userAgent;
+      const head = document.head;
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.type = "text/css"; // Corrigido o MIME type
+
+      if (userAgent.includes("Firefox")) {
+        // Firefox detectado
+        link.href = "../../assets/css/components/_scrolls_moz.css";
+        console.log("Firefox detectado - carregando _scrolls_moz.css");
+      } else if (
+        userAgent.includes("Chrome") ||
+        userAgent.includes("Safari") ||
+        userAgent.includes("Edg")
+      ) {
+        // Chrome, Safari, Edge detectados
+        link.href = "../../assets/css/components/_scrolls.css";
+        console.log("Chrome, Safari ou Edge detectado - carregando _scrolls.css");
+      } else {
+        console.warn("Navegador não identificado. Aplicando o estilo padrão.");
+        return;
+      }
+      // Adiciona o link ao cabeçalho
+      head.appendChild(link);
+      console.log("CSS carregado:", link.href);
+    }
+    // Chama a função ao carregar a página
+    document.addEventListener("DOMContentLoaded", loadScrollStyle);
+  </script>
 </body>
+
 </html>

@@ -5,21 +5,24 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spider Man | Multiverso</title>
+  <title>Spider-Man | Multiverso</title>
   <link href="../../assets/css/internal.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
 </head>
 
 <body>
   <div class="s-wrapper">
-    <video autoplay loop>
+    <!-- Video background -->
+    <video autoplay loop muted class="s-video-bg">
       <source src="../../assets/videos/spiderman-2017-trailer.mp4" type="video/mp4" />
     </video>
-    <!--  Coluna da esquerda com menu (Left Column with menu)  -->
-    <div class="s-left-column">
+
+    <!-- Sidebar navigation -->
+    <aside class="s-left-column">
       <nav class="navigator">
         <div class="navigator__icon">
-          <a href="../../index.html">
-            <img src="../../assets/images/icons/spiderman1-tom.png" />
+          <a href="../../index.html" title="Home">
+            <img src="../../assets/images/icons/spiderman1-tom.png" alt="Spider-Man Icon" />
           </a>
         </div>
         <ul>
@@ -28,60 +31,111 @@
           <li><a href="spiderman3.html">03</a></li>
         </ul>
       </nav>
-    </div>
-    <!-- FIM - Coluna da esquerda com menu (Left Column with menu)  -->
+    </aside>
 
-    <div class="s-main-content">
-      <div class="s-main-content__top">
+    <!-- Main content -->
+    <main class="s-main-content">
+      <!-- Top section with logo and description -->
+      <section class="s-main-content__top">
         <div class="s-logo">
-          <img src="../../assets/images/spiderman-tom/movie-01/logo.png" alt="Spiderman (2002)"
-            title="Spiderman (2002)" />
+          <img src="../../assets/images/spiderman-tom/movie-01/logo.png" alt="Spider-Man Logo (2017)"
+            title="Spider-Man (2017)" />
         </div>
 
         <div class="s-description">
           <div class="pills">
             <ul>
-              <li>Ano: 2002</li>
-              <li>Diretor: Sam Raimi</li>
+              <li>Ano: 2017</li>
+              <li>Diretor: Jon Watts</li>
             </ul>
           </div>
           <div class="s-description__text">
-            <p><strong>Sinopse:</strong>&nbsp;Depois de ser picado por uma aranha geneticamente modificada em uma
-              demonstração científica, o jovem nerd Peter Parker ganha superpoderes. Inicialmente, ele pretende usá-los
-              para para ganhar dinheiro, adotando o nome de Homem-Aranha e se apresentando em lutas de exibição. Porém,
-              ao presenciar o assassinando de seu tio Ben e sentir-se culpado, Peter decide não mais usar seus poderes
-              para proveito próprio e sim para enfrentar o mal, tendo como seu primeiro grande desafio o psicótico
-              Duende Verde.</p>
+            <p><strong>Sinopse:</strong>&nbsp;Peter Parker, agora no ensino médio, tenta equilibrar sua vida como um
+              estudante comum com a responsabilidade de ser o Homem-Aranha, sob o olhar atento de Tony Stark. Quando o
+              vilão Abutre surge, Peter terá que provar que é mais do que apenas o "amigo da vizinhança".</p>
           </div>
         </div>
 
         <div class="s-links">
           <ul>
             <li>
-              <a href="https://www.youtube.com/watch?v=TYMMOjBUPMM" class="link-button" target="_blank">
+              <a href="https://www.youtube.com/watch?v=TYMMOjBUPMM" class="link-button" target="_blank" rel="noopener">
                 <span class="icon">
                   <div class="play-icon">&nbsp;</div>
                 </span>
-                <span class="label">
-                  Assistir trailer
-                </span>
+                <span class="label">Assistir trailer</span>
               </a>
             </li>
           </ul>
         </div>
-      </div>
+      </section>
 
-      <div class="s-main-content__bottom">
+      <!-- Bottom section with Fancybox gallery -->
+      <section class="s-main-content__bottom">
         <div class="gallery">
           <ul>
-            <li><a href="#"><img src="../../assets/images/spiderman-tom/movie-01/gallery/image-01.png" alt=""></a></li>
-            <li><a href="#"><img src="../../assets/images/spiderman-tom/movie-01/gallery/image-02.png" alt=""></a></li>
-            <li><a href="#"><img src="../../assets/images/spiderman-tom/movie-01/gallery/image-03.png" alt=""></a></li>
-            <li><a href="#"><img src="../../assets/images/spiderman-tom/movie-01/gallery/image-04.png" alt=""></a></li>
+            <li>
+              <a data-fancybox="gallery" href="../../assets/images/spiderman-tom/movie-01/gallery/image-01.png">
+                <img src="../../assets/images/spiderman-tom/movie-01/gallery/image-01.png" alt="Cena de Spider-Man 1">
+              </a>
+            </li>
+            <li>
+              <a data-fancybox="gallery" href="../../assets/images/spiderman-tom/movie-01/gallery/image-02.png">
+                <img src="../../assets/images/spiderman-tom/movie-01/gallery/image-02.png"
+                  alt="Cena de ação de Spider-Man 1">
+              </a>
+            </li>
+            <li>
+              <a data-fancybox="gallery" href="../../assets/images/spiderman-tom/movie-01/gallery/image-03.png">
+                <img src="../../assets/images/spiderman-tom/movie-01/gallery/image-03.png"
+                  alt="Cena climática de Spider-Man 1">
+              </a>
+            </li>
+            <li>
+              <a data-fancybox="gallery" href="../../assets/images/spiderman-tom/movie-01/gallery/image-04.png">
+                <img src="../../assets/images/spiderman-tom/movie-01/gallery/image-04.png" alt="Spider-Man em ação">
+              </a>
+            </li>
           </ul>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   </div>
+
+  <!-- Fancybox script -->
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+  <script>
+    // Função para detectar o navegador e carregar o CSS específico
+    function loadScrollStyle() {
+      const userAgent = navigator.userAgent;
+      const head = document.head;
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.type = "text/css"; // Corrigido o MIME type
+
+      if (userAgent.includes("Firefox")) {
+        // Firefox detectado
+        link.href = "../../assets/css/components/_scrolls_moz.css";
+        console.log("Firefox detectado - carregando _scrolls_moz.css");
+      } else if (
+        userAgent.includes("Chrome") ||
+        userAgent.includes("Safari") ||
+        userAgent.includes("Edg")
+      ) {
+        // Chrome, Safari, Edge detectados
+        link.href = "../../assets/css/components/_scrolls.css";
+        console.log("Chrome, Safari ou Edge detectado - carregando _scrolls.css");
+      } else {
+        console.warn("Navegador não identificado. Aplicando o estilo padrão.");
+        return;
+      }
+      // Adiciona o link ao cabeçalho
+      head.appendChild(link);
+      console.log("CSS carregado:", link.href);
+    }
+    // Chama a função ao carregar a página
+    document.addEventListener("DOMContentLoaded", loadScrollStyle);
+  </script>
 </body>
+
 </html>

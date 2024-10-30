@@ -45,6 +45,8 @@ body::before {
   perspective: 3000px;
 }
 
+
+
 .s-card {
   border: 0.5rem solid white;
   width: 100%;
@@ -182,5 +184,6 @@ body[id^="spider-man-"] .s-card:not(.s-card--hovered) {
   justify-content: center;
   width: calc(100vw / 3 - 10%);
   transform-style: preserve-3d;
+  transform: translateZ(-40vw) rotateY(0deg);
   transition: transform 0.4s ease-in;
 }

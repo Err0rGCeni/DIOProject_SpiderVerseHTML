@@ -5,17 +5,30 @@
 @import url('components/_link-button.css');
 @import url('components/_gallery.css');
 
+body {
+  min-height: 100vh;
+}
+
 .s-wrapper {
   display: flex;
   height: 100vh;
-  flex-flow: row nowrap; 
-  background-color: aqua; 
+  flex-flow: row nowrap;
+  position: relative;
+  background-color: #000;
+  overflow: hidden;
+  z-index: 0;
 }
 
-.s-wrapper video{
+.s-wrapper video {
   position: fixed;
-  width: 100%;
-
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+  transform: translate(-50%, -50%);
+  z-index: -9;
 }
 
 .s-wrapper .s-left-column {
@@ -31,62 +44,76 @@
   z-index: 1;
 }
 
-.s-wrapper .s-main-content{
+.s-wrapper .s-main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 24px;
+  padding-bottom: 24px;
   height: 100%;
   width: 100%;
   padding-left: 130px;
   position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .s-wrapper .s-main-content__top {
-  height: 80vh;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
-.s-wrapper .s-main-content__bottom{
-  height: 20vh;
+.s-wrapper .s-main-content__bottom {
+  margin-top: auto;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
 
-.s-wrapper .s-main-content .s-logo img{
+/* .s-wrapper .s-main-content__bottom ul {
+  width: fit-content;
+  padding-right: 24px;
+} */
+
+.s-wrapper .s-main-content .s-logo img {
   margin-top: 50px;
   margin-left: 0;
   margin-bottom: 30px;
 }
 
-.s-wrapper .s-main-content__top .s-description{
-  background-color: rgba(0,0,0,.7);
-  max-width: 50%;
+.s-wrapper .s-main-content__top .s-description {
+  background-color: rgba(0, 0, 0, .7);
+  max-width: 60%;
   padding: 20px;
   border-radius: 10px;
 }
 
-.s-wrapper .s-main-content__top .s-description .s-description__text p{
+.s-wrapper .s-main-content__top .s-description .s-description__text p {
   color: white;
   line-height: 170%;
 }
 
-.s-wrapper .s-main-content__top .s-description .pills{
+.s-wrapper .s-main-content__top .s-description .pills {
   margin-bottom: 20px;
 }
 
-.s-wrapper .s-main-content .s-links{
+.s-wrapper .s-main-content .s-links {
   padding: 20px;
   padding-left: 0;
 }
 
-.s-wrapper .s-main-content .s-links ul{
+.s-wrapper .s-main-content .s-links ul {
   display: flex;
   flex-direction: row;
 }
 
 .s-spiderman-01-01 {
   background-image: url('../images/spiderman-tobey/movie-01/background.png');
-  background-size:cover;
+  background-size: cover;
 }
 
 .s-spiderman-01-02 {

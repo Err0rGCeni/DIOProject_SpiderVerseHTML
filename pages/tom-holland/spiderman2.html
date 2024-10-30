@@ -7,19 +7,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Spider Man | Multiverso</title>
   <link href="../../assets/css/internal.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
 </head>
 
 <body>
   <div class="s-wrapper">
-    <video autoplay loop>
+    <!-- Background video with autoplay and muted for smooth loop -->
+    <video autoplay loop muted class="s-video-bg">
       <source src="../../assets/videos/spiderman2-2019-trailer.mp4" type="video/mp4" />
     </video>
-    <!--  Coluna da esquerda com menu (Left Column with menu)  -->
-    <div class="s-left-column">
+
+    <!-- Sidebar menu -->
+    <aside class="s-left-column">
       <nav class="navigator">
         <div class="navigator__icon">
-          <a href="../../index.html">
-            <img src="../../assets/images/icons/spiderman1-tom.png" />
+          <a href="../../index.html" title="Home">
+            <img src="../../assets/images/icons/spiderman1-tom.png" alt="Spiderman Icon" />
           </a>
         </div>
         <ul>
@@ -28,13 +31,15 @@
           <li><a href="spiderman3.html">03</a></li>
         </ul>
       </nav>
-    </div>
-    <!-- FIM - Coluna da esquerda com menu (Left Column with menu)  -->
+    </aside>
+    <!-- End of Sidebar menu -->
 
-    <div class="s-main-content">
-      <div class="s-main-content__top">
+    <!-- Main content section -->
+    <main class="s-main-content">
+      <!-- Top section with logo, description, and trailer link -->
+      <section class="s-main-content__top">
         <div class="s-logo">
-          <img src="../../assets/images/spiderman-tom/movie-02/logo.png" alt="Spiderman 2 (2005)"
+          <img src="../../assets/images/spiderman-tom/movie-02/logo.png" alt="Spiderman 2 Logo (2005)"
             title="Spiderman 2 (2005)" />
         </div>
 
@@ -46,37 +51,86 @@
             </ul>
           </div>
           <div class="s-description__text">
-            <p><strong>Sinopse:</strong>&nbsp;Quando uma falha na experiência de fusão nuclear resulta em uma explosão que mata sua esposa, o Dr. Otto Octavius é transformado em Dr. Octopus, um ciborgue com tentáculos de metal. Doc Ock culpa o Homem-Aranha pelo acidente e quer vingança. Enquanto isso, o alter ego do herói, Peter Parker, perde seus poderes. Para complicar as coisas, o seu melhor amigo odeia o Homem-Aranha e sua amada fica noiva..</p>
+            <p><strong>Sinopse:</strong> Quando uma falha na experiência de fusão nuclear resulta em uma explosão que
+              mata sua esposa, o Dr. Otto Octavius é transformado em Dr. Octopus, um ciborgue com tentáculos de metal.
+              Doc Ock culpa o Homem-Aranha pelo acidente e quer vingança. Enquanto isso, o alter ego do herói, Peter
+              Parker, perde seus poderes, e o seu melhor amigo odeia o Homem-Aranha.</p>
           </div>
         </div>
 
         <div class="s-links">
           <ul>
             <li>
-              <a href="#" class="link-button">
+              <a href="https://www.youtube.com/watch?v=TYMMOjBUPMM" class="link-button" target="_blank" rel="noopener">
                 <span class="icon">
                   <div class="play-icon">&nbsp;</div>
                 </span>
-                <span class="label">
-                  Assistir trailer
-                </span>
+                <span class="label">Assistir trailer</span>
               </a>
             </li>
           </ul>
         </div>
-      </div>
+      </section>
+      <!-- End of Top section -->
 
-      <div class="s-main-content__bottom">
+      <!-- Bottom section with Fancybox gallery -->
+      <section class="s-main-content__bottom">
         <div class="gallery">
           <ul>
-            <li><a href="#"><img src="../../assets/images/spiderman-tom/movie-01/gallery/image-01.png" alt=""></a></li>
-            <li><a href="#"><img src="../../assets/images/spiderman-tom/movie-01/gallery/image-02.png" alt=""></a></li>
-            <li><a href="#"><img src="../../assets/images/spiderman-tom/movie-01/gallery/image-03.png" alt=""></a></li>
-            <li><a href="#"><img src="../../assets/images/spiderman-tom/movie-01/gallery/image-04.png" alt=""></a></li>
+            <li><a data-fancybox="gallery" href="../../assets/images/spiderman-tom/movie-01/gallery/image-01.png"><img
+                  src="../../assets/images/spiderman-tom/movie-01/gallery/image-01.png" alt="Cena de Spiderman 2"></a>
+            </li>
+            <li><a data-fancybox="gallery" href="../../assets/images/spiderman-tom/movie-01/gallery/image-02.png"><img
+                  src="../../assets/images/spiderman-tom/movie-01/gallery/image-02.png"
+                  alt="Cena de ação de Spiderman 2"></a></li>
+            <li><a data-fancybox="gallery" href="../../assets/images/spiderman-tom/movie-01/gallery/image-03.png"><img
+                  src="../../assets/images/spiderman-tom/movie-01/gallery/image-03.png"
+                  alt="Cena climática de Spiderman 2"></a></li>
+            <li><a data-fancybox="gallery" href="../../assets/images/spiderman-tom/movie-01/gallery/image-04.png"><img
+                  src="../../assets/images/spiderman-tom/movie-01/gallery/image-04.png" alt="Cena de Spiderman 2"></a>
+            </li>
           </ul>
         </div>
-      </div>
-    </div>
+      </section>
+      <!-- End of Bottom section -->
+    </main>
+    <!-- End of Main content section -->
   </div>
+
+  <!-- Fancybox script -->
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+  <script>
+    // Função para detectar o navegador e carregar o CSS específico
+    function loadScrollStyle() {
+      const userAgent = navigator.userAgent;
+      const head = document.head;
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.type = "text/css"; // Corrigido o MIME type
+
+      if (userAgent.includes("Firefox")) {
+        // Firefox detectado
+        link.href = "../../assets/css/components/_scrolls_moz.css";
+        console.log("Firefox detectado - carregando _scrolls_moz.css");
+      } else if (
+        userAgent.includes("Chrome") ||
+        userAgent.includes("Safari") ||
+        userAgent.includes("Edg")
+      ) {
+        // Chrome, Safari, Edge detectados
+        link.href = "../../assets/css/components/_scrolls.css";
+        console.log("Chrome, Safari ou Edge detectado - carregando _scrolls.css");
+      } else {
+        console.warn("Navegador não identificado. Aplicando o estilo padrão.");
+        return;
+      }
+      // Adiciona o link ao cabeçalho
+      head.appendChild(link);
+      console.log("CSS carregado:", link.href);
+    }
+    // Chama a função ao carregar a página
+    document.addEventListener("DOMContentLoaded", loadScrollStyle);
+  </script>
 </body>
+
 </html>

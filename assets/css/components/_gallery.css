@@ -1,11 +1,16 @@
 .gallery {
-  padding: 20px;
+  padding: 8px;
   padding-left: 0;
+  overflow-x: auto; /* Garantir rolagem horizontal */
+  height: fit-content;
+  scroll-behavior: smooth;
 }
 
 .gallery ul{
   display: flex;
   flex-direction: row;
+  width: fit-content;
+  padding-right: 24px;
 }
 
 .gallery ul li{
@@ -17,6 +22,6 @@
 }
 
 .gallery ul li a img{
-  border:solid 6px white;
-  border-radius: 15px;
+  border:solid 4px white;
+  border-radius: 16px;
 }
